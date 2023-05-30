@@ -1,8 +1,4 @@
 <form action="proses_tambah.php" method="post" enctype="multipart/form-data">
-    <label for="gambar">Pilih Gambar:</label>
-    <input type="file" name="gambar" id="gambar">
-    <br>
-    <input type="submit" value="Unggah Gambar">
 
     <table>
         <tr>
@@ -30,11 +26,14 @@
             <td><input type="text" name="picture" id="picture">
             </td>
         </tr>
+        <label for="gambar">Pilih Gambar:</label>
+        <input type="file" name="gambar" id="gambar">
         <tr>
             <td>Size</td>
             <td><input type="text" name="size" id="size">
             </td>
         </tr>
+
         <tr>
             <td colspan="2"><input type="submit" name="submit" value="Tambah"></td>
         </tr>
