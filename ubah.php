@@ -1,38 +1,43 @@
-<?php 
+<?php
 include_once("koneksi.php");
 $id = $_GET["id"];
 
-$query = mysqli_query($conn, "SELECT * FROM customer WHERE id='$id'");
+$query = mysqli_query($conn, "SELECT * FROM categories WHERE id='$id'");
 
-while($customer = mysqli_fetch_array($query)){
-    $namaDepan = $customer['first_name'];
-    $namaBelakang = $customer['last_name'];
-    $surel = $customer['email'];
-    $noTlp = $customer['phone'];
-    $alamat = $customer['address'];
+while ($categories = mysqli_fetch_array($query)) {
+    $id = $ccategories['id'];
+    $name = $categories['name'];
+    $categories_id = $categories['categories_id'];
+    $price = $categories['price'];
+    $picture = $categories['picture'];
+    $size = $categories['size'];
 }
 ?>
 <form action="proses_ubah.php?id=<?php echo $id ?>" method="post">
     <table>
         <tr>
-            <td>First Name</td>
-            <td><input type="text" name="nama_depan" value="<?php echo $namaDepan ?>"></td>
+            <td>Id</td>
+            <td><input type="text" name="id" value="<?php echo $id ?>"></td>
         </tr>
         <tr>
-            <td>Last Name</td>
-            <td><input type="text" name="nama_belakang" value="<?php echo $namaBelakang ?>"></td>
+            <td>Name</td>
+            <td><input type="text" name="name" value="<?php echo $name ?>"></td>
         </tr>
         <tr>
-            <td>Email</td>
-            <td><input type="text" name="surel" value="<?php echo $surel ?>"></td>
+            <td>Categories Id</td>
+            <td><input type="text" name="categories_id" value="<?php echo $categories_id ?>"></td>
         </tr>
         <tr>
-            <td>Phone</td>
-            <td><input type="text" name="no_telp" value="<?php echo $noTlp ?>"></td>
+            <td>Price</td>
+            <td><input type="text" name="price" value="<?php echo $price ?>"></td>
         </tr>
         <tr>
-            <td>Address</td>
-            <td><input type="text" name="alamat" value="<?php echo $alamat ?>"></td>
+            <td>Picture</td>
+            <td><input type="text" name="picture" value="<?php echo $picture ?>"></td>
+        </tr>
+        <tr>
+            <td>Size</td>
+            <td><input type="text" name="size" value="<?php echo $size ?>"></td>
         </tr>
         <tr>
             <td colspan=2><input type="submit" name="submit" value="Ubah"></td>
